@@ -1,3 +1,4 @@
+import Footer from "./Footer/Footer";
 import Main from "./Main";
 import NavBar from "./NavBar";
 
@@ -6,6 +7,7 @@ const FullDisplay = function () {
     <div>
       <NavBar />
       <Main />
+      <Footer />
     </div>
   );
 };

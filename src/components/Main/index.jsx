@@ -1,5 +1,11 @@
+import CarouselSlider from "./Carousel/Carousel";
+
 const Main = function () {
-  return <div>Ini main</div>;
+  return (
+    <div>
+      <CarouselSlider />
+    </div>
+  );
 };
 
 export default Main;
