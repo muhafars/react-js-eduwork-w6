@@ -1,9 +1,9 @@
-import FullDisplay from "./components";
+import DisplayApp from "./components";
 
 const App = function () {
   return (
     <div>
-      <FullDisplay />
+      <DisplayApp />
     </div>
   );
 };

@@ -1,15 +1,12 @@
-import Footer from "./Footer/Footer";
-import Main from "./Main";
-import NavBar from "./NavBar";
+import "./styles.scss";
+import NavBar from "./NavBar/NavBar";
+import Content from "./Content/Content";
 
-const FullDisplay = function () {
+export default function DisplayApp() {
   return (
-    <div>
+    <div className="App">
       <NavBar />
-      <Main />
-      <Footer />
+      <Content />
     </div>
   );
-};
-
-export default FullDisplay;
+}

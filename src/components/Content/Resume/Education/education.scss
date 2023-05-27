@@ -1,0 +1,44 @@
+.university-name {
+  font-family: "Ubuntu";
+  color: red;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.university-degree {
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: "Ubuntu";
+  color: #1c1c1c;
+  text-transform: uppercase;
+}
+
+.passed-out {
+  font-family: monospace;
+  font-size: 1rem;
+  background: var(--standout-color);
+  color: #1c1c1c;
+  padding: 10px 10px;
+  border-radius: 20px;
+}
+
+@media all and (max-width: 786px) {
+  .flex-column {
+    display: flexbox;
+  }
+  .university-name {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .university-degree {
+    font-size: 0.9rem;
+  }
+  .passed-out {
+    font-size: 0.95rem;
+    color: #ffffff;
+    background-color: var(--primary-app-color);
+    border: 2px solid var(--standout-color);
+    // padding: 10px 10px;
+    // border-radius: 20px;
+  }
+}
