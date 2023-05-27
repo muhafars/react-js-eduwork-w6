@@ -28,7 +28,7 @@ export default function Education() {
       <div className="d-flex flex-column">
         {education.map((edu, index) => (
           <div className="education-one my-4 justify-content-between d-flex flex-row" key={index}>
-            <div className="d-flex flex-column new-one">
+            <div className="d-flex flex-column ">
               <span className="university-name">{edu.universityName}</span>
               <span className="university-degree">{edu.universityDegree}</span>
             </div>

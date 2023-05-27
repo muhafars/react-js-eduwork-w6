@@ -1,35 +1,35 @@
 import React from "react";
 import "./work.scss";
+const workHistory = [
+  {
+    name: "PT.Prudential Life Insurance",
+    position: "Agent",
+    workPass: "2016-2017",
+  },
+  {
+    name: "UD.Kencana",
+    position: "Electrican Technician",
+    workPass: "2017-2019",
+  },
+  {
+    name: "GoTo",
+    position: "Driver",
+    workPass: "2019-2020",
+  },
+];
 export default function Work() {
   return (
     <>
-      <div className="work-inside-new mx-2 my-4">
-        <div className="d-flex flex-column">
-          <div className="d-flex flex-row justify-content-between">
-            <span className="company-name">Cantilever labs</span>
-            <span className="year-passedout">2021-present</span>
+      <div className="flex-column work-inside-new">
+        {workHistory.map((work, i) => (
+          <div className="my-4 flex-column justify-content-between" key={i}>
+            <div className="d-flex flex-column">
+              <span className="company-name">{work.name}</span>
+              <span className="position">{work.position}</span>
+              <span className="passed-out">{work.workPass}</span>
+            </div>
           </div>
-        </div>
-
-        <div className="d-flex flex-column">
-          <span className="position">Full Stack Developer</span>
-          <span className="description-position">
-            <ul>
-              <li>
-                {" "}
-                Created a Job Portal for the website which drives heavy traffic using MERN Stack
-              </li>
-              <li>
-                {" "}
-                Created a Job Portal for the website which drives heavy traffic using MERN Stack
-              </li>
-              <li>
-                {" "}
-                Created a Job Portal for the website which drives heavy traffic using MERN Stack
-              </li>
-            </ul>
-          </span>
-        </div>
+        ))}
       </div>
     </>
   );
