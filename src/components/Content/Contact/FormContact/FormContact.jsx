@@ -1,39 +1,33 @@
 import React, { useState, useRef } from "react";
-// import { SMTPClient } from "emailjs";
+import emailjs from "emailjs-com";
 import "./form-contact.scss";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function FormContact() {
-  //   const client = new SMTPClient({
-  //     user: "user",
-  //     password: "password",
-  //     host: "smtp.your-email.com",
-  //     ssl: true,
-  //   });
-  const [name, setname] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  //   const [email, setemail] = useState("");
   const form = useRef();
-  //   const [message, setmessage] = useState("");
-  //   const sendEmail = e => {
-  //     e.preventDefault();
-  //     // console.log(e);
-  //     console.log(form.current);
+  const sendEmail = e => {
+    e.preventDefault();
+    // console.log(e);
+    console.log(form.current);
 
-  //     const templateparams = {
-  //       from_name: name + " " + email,
-  //       to_name: "mohammed.khan@cantileverlabs.com",
-  //       feedback: message,
-  //     };
-  //     // eslint-disable-next-line no-undef
-  //     emailjs.send("service_1k26k8o", "template_otup6qi", templateparams).then(
-  //       function (response) {
-  //         console.log("SUCCESS!", response.status, response.text);
-  //       },
-  //       function (error) {
-  //         console.log("FAILED...", error);
-  //       }
-  //     );
-  //   };
+    const templateParams = {
+      from_name: name + " " + email,
+      to_name: "dev.muhafars@gmail.com",
+      feedback: message,
+    };
+    emailjs.send("service_vcmbrxr", "template_ltmvfrm", templateParams, "xnXHzfGmtKd7phZC_").then(
+      function (response) {
+        console.log("SUCCESS! Terkirim", response.status, response.text);
+      },
+      function (error) {
+        console.log("Failed there is....", error);
+      }
+    );
+  };
 
   return (
     <>
@@ -43,26 +37,23 @@ export default function FormContact() {
             <span className="get-in-touch mx-4 my-5">Get in touch </span>
 
             <div className="py-5 d-flex justify-content-center">
-              <lottie-player
-                src="https://assets10.lottiefiles.com/packages/lf20_3ktmthuy.json"
-                background="transparent"
-                speed="1"
-                style={{ width: "300px" }}
-                loop
+              <Player
                 autoplay
-              ></lottie-player>
+                loop
+                src="https://assets6.lottiefiles.com/temp/lf20_U1CPFF.json"
+                style={{ width: "300px" }}
+              ></Player>
             </div>
           </div>
 
-          {/* <div className="col-lg-6 col-md-5 col-sm-12 my-auto">
-            // eslint-disable-next-line no-undef
-            <form ref={form} className="d-flex flex-column card-contact-right" onSubmit={sendEmail}>
+          <div className="col-lg-6 col-md-5 col-sm-12 my-auto card-contact-right">
+            <form ref={form} className="d-flex flex-column" onSubmit={sendEmail}>
               <div className="input-group my-3 d-flex flex-column">
                 <label> Name </label>
                 <input
                   value={name}
                   onChange={e => {
-                    setname(e.target.value);
+                    setName(e.target.value);
                   }}
                   type="text"
                   placeholder="enter your name"
@@ -74,7 +65,7 @@ export default function FormContact() {
                 <input
                   value={email}
                   onChange={e => {
-                    setemail(e.target.value);
+                    setEmail(e.target.value);
                   }}
                   type="text"
                   placeholder="enter your Email"
@@ -86,7 +77,7 @@ export default function FormContact() {
                 <textarea
                   value={message}
                   onChange={e => {
-                    setmessage(e.target.value);
+                    setMessage(e.target.value);
                   }}
                   type="text"
                   placeholder="enter your message"
@@ -97,7 +88,7 @@ export default function FormContact() {
                 <input className="btn btn-success" type="submit" value="Send Message" />{" "}
               </div>
             </form>
-          </div> */}
+          </div>
         </div>
       </div>
     </>

@@ -1,30 +1,21 @@
-import { Col, Navbar, Row } from "react-bootstrap";
-import Nav from "react-bootstrap/Nav";
+import "./footer.scss";
 const Footer = function () {
+  const footerItems = [
+    { name: "resume", link: "#" },
+    { name: "about", link: "#" },
+  ];
   return (
     <>
-      <Navbar
-        expand="lg"
-        className="justify-content-center"
-        fixed="bottom"
-        variant="dark"
-        bg="dark"
-      >
-        <Nav defaultActiveKey="#owner">
-          <Row expand="lg">
-            <Col md="auto">
-              <Nav.Item>
-                <Nav.Link href="#owner">Muhammad Fajri Assidiq</Nav.Link>
-              </Nav.Item>
-            </Col>
-            <Col>
-              <Nav.Item>
-                <Nav.Link href="">Eduwork</Nav.Link>
-              </Nav.Item>
-            </Col>
-          </Row>
-        </Nav>
-      </Navbar>
+      <nav className=" d-flex footer-content flex-rows">
+        <span className="footer-brand-name">Coprights @Muhammad Fajri Assidiq</span>
+        <div className=" flex-rows">
+          {footerItems.map((item, index) => (
+            <a key={index} href={item.link} className="mx-4 footer-nav-items">
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </nav>
     </>
   );
 };

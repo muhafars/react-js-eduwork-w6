@@ -3,8 +3,8 @@ import "./education.scss";
 const education = [
   {
     universityName: "Niomic Technology Bootcamp",
-    universityDegree: "Bachelors of Technology in Computer Science",
-    yearPassedOut: "2018 ~",
+    universityDegree: "Technology Development Computer Science",
+    yearPassedOut: "2018 ~ Present",
   },
   {
     universityName: "Indobot x Digi Kominfo",

@@ -10,6 +10,13 @@
   color: #fff;
   font-size: 2rem;
 }
+.footer-navbar-new {
+  position: fixed;
+  height: 100vh;
+  width: 100;
+  z-index: 33;
+  transform: translateX(-700px);
+}
 
 @media all and (max-width: 786px) {
   .navbar-option-mobile {
@@ -17,7 +24,7 @@
     width: 100vw;
     height: 45px;
     position: fixed;
-    z-index: 44;
+    z-index: 50;
   }
   .flex-rows {
     flex-direction: column;
@@ -46,13 +53,14 @@
   .px-10 {
     padding-inline: 10px;
   }
-  .nav-items {
-    padding-block: 20px;
-  }
   .brand-name {
     font-size: 1.3rem;
     padding-inline: 22px;
     margin-top: 1px;
+  }
+  .nav-items {
+    padding-block: 30px;
+    display: block;
   }
   .bars {
     cursor: crosshair;

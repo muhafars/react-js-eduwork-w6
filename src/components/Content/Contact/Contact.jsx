@@ -1,5 +1,5 @@
 import FormContact from "./FormContact/FormContact";
-
+import "./contact.scss";
 export default function Contact() {
   return (
     <>

@@ -2,48 +2,46 @@ import { useState } from "react";
 import "./navbar.scss";
 import NavAbout from "./NavAbout/NavAbout";
 const NavBar = function () {
-  const [opennav, setopennav] = useState(false);
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "About me", href: "#aboutme" },
+    { name: "Resume", href: "#resume" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact me", href: "#contactme" },
+  ];
+  const [openNav, setOpenNav] = useState(false);
 
   return (
     <>
       <div className="navbar-option-mobile bg-new ">
         <div className="d-flex flex-row justify-content-between">
-          <span className="brand-name d-flex aling-items-center justify-content-center">
-            Muhammad Fajri Assidiq
-          </span>
+          <span className="brand-name d-flex  justify-content-center">Muhammad Fajri Assidiq</span>
           <div
-            className={!opennav ? "bars mx-2 transition-all " : " transition-all open bars mx-2 "}
-            style={{ background: opennav && "#02203c" }}
-            onClick={() => setopennav(!opennav)}
-          >
-            {" "}
-          </div>
+            className={!openNav ? "bars mx-2 transition-all " : " transition-all open bars mx-2 "}
+            style={{ background: openNav && "#02203c" }}
+            onClick={() => setOpenNav(!openNav)}
+          ></div>
         </div>
       </div>
       <nav
         className={
-          !opennav
+          !openNav
             ? " d-flex bg-new px-9 navbar-new py-5 flex-rows transition-all "
             : " d-flex bg-new px-9 navbar-fixed-new py-5 flex-rows transition-all "
         }
       >
         <span className="brand-name">ASH DEV</span>
-        <div className=" d-flex flex-rows">
-          <a href="#home" className="mx-4 nav-items" onClick={() => setopennav(false)}>
-            Home{" "}
-          </a>
-          <a href="#aboutme" className="mx-4 nav-items" onClick={() => setopennav(false)}>
-            About me
-          </a>
-          <a href="#resume" className="mx-4 nav-items" onClick={() => setopennav(false)}>
-            Resume
-          </a>
-          <a href="#testimonials" className="mx-4 nav-items" onClick={() => setopennav(false)}>
-            Testimonial
-          </a>
-          <a href="#contactme" className="mx-4 nav-items" onClick={() => setopennav(false)}>
-            Contact me
-          </a>
+        <div className="d-flex flex-rows">
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              className="mx-4 nav-items"
+              onClick={() => setOpenNav(false)}
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       </nav>
       <NavAbout />
